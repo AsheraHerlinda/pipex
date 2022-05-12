@@ -14,15 +14,15 @@ INC		=	-I ./libft
 LIB		=	-L ./libft -lft
 LFT		=	libft/libft.a
 
-all:	${LFT} ${NAME} ./Makefile
+all:	${LFT} ${NAME}
 
-${NAME}: ${OBJS} ${HEAD}
+${NAME}: ${OBJS}
 		${CC} -o ${NAME} $^ ${LIB}
 
 ${LFT}: 
 		make -s -C libft
 
-%.o:	%.c 
+%.o:	%.c ${HEAD} Makefile
 		${CC} ${FLAGS} ${INC} -c $< -o $@ 
 
 clean:
