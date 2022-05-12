@@ -52,7 +52,7 @@ FLAGS = -Wall -Wextra -Werror
 all: ${NAME}
 ${NAME}: ${OBJS}
 			ar rcs ${NAME} $?
-%.o:    %.c ${LIBH}
+%.o:    %.c ${LIBH} Makefile
 			${CC} ${FLAGS} -c $< -o $@
 bonus:  
 		@make OBJS="${OBJS} ${OBJS_BONUS}" all
