@@ -1,17 +1,16 @@
 NAME = 			pipex
 
-SRCS =			./src/pipex_bonus.c \
-				./src/pipex_utils_bonus.c \
+SRCS =			./src/pipex.c \
+				./src/pipex_utils.c \
 				./src/get_commands.c \
 				./src/end_programm.c \
-				./src/here_doc_read.c \
 
 OBJS =			${SRCS:.c=.o}
 
 CC 		=	gcc 
 RM 		=	rm -f
 FLAGS 	=	-Wall -Wextra -Werror
-HEAD	=	./inc/pipex_bonus.h
+HEAD	=	./inc/pipex.h
 INC		=	-I ./libft
 LIB		=	-L ./libft -lft
 LFT		=	./libft/libft.a
