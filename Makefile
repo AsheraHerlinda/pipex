@@ -1,16 +1,16 @@
 NAME = 			pipex
 NAME_bonus = 	pipex_bonus
 
-SRCS =			man/src/pipex.c \
-				man/src/pipex_utils.c \
-				man/src/get_commands.c \
-				man/src/end_programm.c \
+SRCS =			man/pipex.c \
+				man/pipex_utils.c \
+				man/get_commands.c \
+				man/end_programm.c \
 
-SRCS_bonus =	bonus/src/pipex_bonus.c \
-				bonus/src/pipex_utils_bonus.c \
-				bonus/src/get_commands.c \
-				bonus/src/end_programm.c \
-				bonus/src/here_doc_read.c \
+SRCS_bonus =	bonus/pipex_bonus.c \
+				bonus/pipex_utils_bonus.c \
+				bonus/get_commands.c \
+				bonus/end_programm.c \
+				bonus/here_doc_read.c \
 
 OBJS =			${SRCS:.c=.o}
 OBJS_bonus =	${SRCS_bonus:.c=.o}
@@ -51,4 +51,6 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+re_bonus: fclean bonus
+
+.PHONY: all clean fclean re bonus re_bonus
