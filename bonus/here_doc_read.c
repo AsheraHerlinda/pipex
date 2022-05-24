@@ -49,7 +49,8 @@ static void	here_doc_input(t_data *data, char **argv)
 		line = get_next_line(0);
 		if (!line)
 			free_data(data, "here_doc_gnl", errno);
-		if (!ft_strncmp(line, argv[2], ft_strlen(argv[2])))
+		if ((!ft_strncmp(line, argv[2], ft_strlen(argv[2]))) && \
+					(ft_strlen(line) - 1 == ft_strlen(argv[2])))
 			break ;
 		ft_putstr_fd(line, 1);
 		free(line);
